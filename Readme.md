@@ -8,3 +8,7 @@
     Eat
     Play
 #EVENING
+    Play again
+    Eat
+    shower
+    Sleep
