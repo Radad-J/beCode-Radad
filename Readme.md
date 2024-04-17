@@ -4,4 +4,7 @@
     Choose outfit
     Wear makeup
 #AFTERNOON
+    Study
+    Eat
+    Play
 #EVENING
