@@ -245,4 +245,21 @@ for (let i = 0; i < users.length; i++) {
     console.log(`${i + 1}. My full name is ${users[i].firstName} ${users[i].lastName}`);
 }
 
-*/
+const seatingChart = [
+    ["Colas", "Benoit", "Elodie"],
+    ["Sola", "Irina", "Antonino", "Eli"],
+    ["John", "Maryna", "Naike", "Fabrice"],
+];
+
+  // I can use nested loops to do that :
+
+for (let i = 0; i < seatingChart.length; i++) {
+    const row = seatingChart[i]; // I created a variable "row" just to be cleaner in the declaration of the next loop. You could put seatingChart[i].length, it would be the same thing
+    console.log(`ROW #${i + 1}`);
+    for (let j = 0; j < row.length; j++) {
+    console.log(row[j]);
+    }
+}*/
+
+let maxNumber = parseInt(prompt("Choose a random number"));
+console.log(maxNumber);
