@@ -259,7 +259,262 @@ for (let i = 0; i < seatingChart.length; i++) {
     for (let j = 0; j < row.length; j++) {
     console.log(row[j]);
     }
-}*/
+}
 
-let maxNumber = parseInt(prompt("Choose a random number"));
-console.log(maxNumber);
+//Game with while
+let cpt = 0;
+
+let maxNumber = parseInt(prompt("Choose a maximum number"));
+while (!maxNumber) {
+    maxNumber = parseInt(prompt("Please enter a real number"));
+}
+
+randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+guessedNumber = parseInt(prompt("Try to guess the number"));
+
+while(!guessedNumber){
+    guessedNumber = parseInt(prompt("Please enter a valid number"));
+}
+
+while(randomNumber != guessedNumber){
+    if(guessedNumber > randomNumber){
+        guessedNumber = parseInt(prompt("Sorry not correct, Please lower your number"));
+    }else {
+        guessedNumber = parseInt(prompt("Sorry not correct, Please higher your number"));
+    }
+    while(!guessedNumber){
+        guessedNumber = parseInt(prompt("Please enter a valid number"));
+    }
+    cpt++;
+}
+
+alert(`Congratulations! You made ${cpt} attempts before you guessed right ! The number was ${randomNumber}`);
+
+//TODO using loops and arrays
+todoArr  = ["Clean"];
+
+while(true){
+command = prompt("Welcome, please enter your command.(new, list, delete, quit)").toLowerCase();
+    if(command == "new"){
+
+        todo = prompt("What's your TODO ?");
+        todoArr.push(todo);
+        console.log("TODO added succesfully");
+        continue;
+
+    }else if(command == "list"){
+        console.log("******** TODO LIST ********");
+        for(let i = 0; i < todoArr.length; i++){
+            console.log(`${i + 1}. ${todoArr[i]}`);
+        }
+        continue;
+
+    }else if(command == "delete"){
+        deletedTodo = parseInt(prompt("Which TODO do you want to delete ?"));
+        while(!deletedTodo || deletedTodo < 1 || deletedTodo > todoArr.length){
+            deletedTodo = parseInt(prompt("Please enter a valid TODO number"));
+        }
+        todoArr.splice(deletedTodo - 1, 1);
+        console.log(`Todo number ${deletedTodo} is deleted successfully`);
+        continue;
+
+    }else if(command == "quit"){
+        break;
+    }
+}
+alert("Thank you! See you later");
+
+//Function song
+function throwDice(faces, times){
+    for(let i = 0;i < times;i++){
+        console.log(`Die ${i + 1}: ${Math.floor(Math.random() * faces + 1)}`);
+    }
+}
+throwDice(6, 3);
+
+//
+function repeat(char, times){
+    repeatedString = "";
+    for(let i = 0;i < times;i++){
+        repeatedString += char;
+    }
+    console.log(repeatedString);
+}
+repeat("$", 10);
+
+//
+function greet(firstName, lastName){
+    console.log(`This is ${firstName} ${lastName[0].toUpperCase()}`);
+}
+
+greet("Radad", "eljaidi");
+
+//
+function sum(var1, var2){
+    if(isNaN(var1) || isNaN(var2)){
+        return "These are not valid numbers, enter a valid number";
+    }
+    let total = Number(var1) + Number(var2);
+    return total;
+}
+
+const myVariable = sum("6", "4");
+console.log(myVariable);
+
+//
+function logs() {
+    console.log("Hello");
+    console.log("World");
+    return 4;
+    console.log("Goodbye");
+    console.log("World");
+}
+const myVariable = logs();
+console.log(myVariable);
+
+//
+function isShortWeather(temperature){
+    if(temperature >= 24){
+        return console.log(true);
+    }else{
+        return console.log(false);
+    }
+}
+
+isShortWeather(13); // false
+isShortWeather(27); // true
+isShortWeather(-7); // false
+
+//
+function lastElement(arr){
+    if(!Array.isArray(arr)){
+        return console.log("sorry this is not an array");
+    }else if(arr.length === 0){
+        return console.log(null);
+    }else{
+        return console.log(arr[arr.length-1]);
+    }
+}
+
+lastElement([3, 5, 7]); //7
+lastElement([1]); //1
+lastElement([]); //null
+lastElement("a"); //not an array
+
+//
+function capitalize(str){
+    if(typeof(str) !== 'string'){
+        return console.log("Sorry this is not a string");
+    }else{
+        return console.log(str.charAt(0).toUpperCase() + str.slice(1));
+    }
+}
+capitalize("eggplant"); // "Eggplant"
+capitalize("pamplemousse"); // "Pamplemousse"
+capitalize("squid"); //"Squid"
+
+//
+function sumArray(arr){
+    total = 0;
+    if(!Array.isArray(arr)){
+        return console.log("Sorry this is not an array");
+    }else{
+        return console.log(str.charAt(0).toUpperCase() + str.slice(1));
+    }
+    for(let i = 0;i<arr.length;i++){
+        total += arr[i];
+    }
+    return console.log(total);
+}
+
+sumArray([1, 2, 3]); // 6
+sumArray([2, 2, 2, 2]); // 8
+sumArray([50, 50, 1]); // 101
+
+let arrDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+function returnDay(day){
+    if(day > 7 && day < 1){
+        return null;
+    }else{
+        return console.log(arrDays[day - 1]);
+    }
+}
+
+returnDay(1); // "Monday"
+returnDay(7); // "Sunday"
+returnDay(4); // "Thursday"
+returnDay(0); // null
+
+const rollDie = function () {
+    const roll = Math.floor(Math.random() * 6 + 1);
+    return roll;
+};
+
+const rollAndTime = function(rollDie, times){
+    for(let i = 0; i< times;i++){
+        console.log(rollDie());
+    }
+};
+
+rollAndTime(rollDie, 6);
+
+//objects with methods
+const user = {
+    fisrtName: "Vito",
+    lastName: "Corleone",
+    age: 26,
+    printAge: function () {
+        console.log(this.fisrtName + " " + this.lastName + " is " + this.age + " years old.");
+    },
+    aYearHasPassed: function () {
+        console.log(`My name is ${this.age + 1}`);
+    },
+};
+
+//array functions
+function addOne(num) {
+    return num + 1;
+}
+
+const addOne = (num) => {
+    return num + 1;
+};
+
+const addOne = (num) => num + 1;
+
+//foreach
+let arr = ["radad", "nathalie", "Amira"];
+arr.forEach(function (student){
+    console.log(student);
+});
+
+//map (changes the actual value inside of the arrays)
+const firstArray = [1, 2, 3, 4, 5];
+
+const newArray = firstArray.map((element) => {
+  return element * 5;
+});
+
+// Now, let's see :
+console.log(firstArray);
+console.log(newArray);
+
+
+That means : Take the property firstName of the object myObject and create a variable from it with the same name.
+
+You can destructure many properties at once !
+
+const { firstName, lastName, age, profession } = myObject;
+
+// Then :
+
+console.log(firstName);
+console.log(lastName);
+console.log(age);
+console.log(profession);
+
+console.log("Hello!");
+
+setTimeOut(() => {
+    console.log("I've been logged 2 seconds after the first log");
+}, 2000);*/
