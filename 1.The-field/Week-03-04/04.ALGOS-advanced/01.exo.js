@@ -1,9 +1,13 @@
 function ransomNote(noteText, magazineText) {
-    const noteWords = noteText.split(' ');
     const magazineWords = magazineText.split(' ');
-    
-    // Check if every word in the note text is included in the magazine text
-    return noteWords.every(word => magazineWords.includes(word));
+
+    // Iterate through note words
+    for (const word of noteText.split(' ')) {
+        const index = magazineWords.indexOf(word);
+        if (index === -1) return false; // Word not found
+        magazineWords.splice(index, 1); // Remove word from magazine
+    }
+    return true;
 }
 
 // Test cases
