@@ -1,0 +1,79 @@
+.open-sans-<uniquifier> {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+body{
+    font-family: "Open Sans", "sans-serif";
+    font-weight: 400;
+    font-style: normal;
+}
+/*
+    1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+body{
+    background-color: rgb(52, 52, 52);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+h1{
+    background-color: rgb(99, 95, 95);
+    text-align: center;
+    padding: 30px;
+    font-size: 45px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    border-bottom: white solid 1px;
+}
+h1>span{
+    font-weight: bold;
+    color: #ffb30e;
+}
+p{
+    max-width: 500px;
+    margin: auto;
+    margin-top: 50px;
+    letter-spacing: 1px;
+    line-height: 32px;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+p > span{
+    color: #ffb30e;
+    font-weight: bold;
+}
+
+a{
+    margin: auto;
+    margin-top: 50px;
+    color: black;
+    background-color: #ffaf03;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 50%;
+    text-align: center;
+}
+
+a:hover{
+    background-color: #fbca62;
+}
