@@ -2,10 +2,10 @@
 <weight>: Use a value from 100 to 900*/
 
 .noto-sans-symbols-<noto-sans-symbol> {
-  font-family: "Noto Sans Symbols", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <400>;
-  font-style: normal;
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <400>;
+    font-style: normal;
 }
 
 .allan-regular {
@@ -36,19 +36,19 @@
     margin: 0;
 }
 
-body{
+body {
     font-family: "Noto Sans Symbols", sans-serif;
     background-color: #2D4480;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.card{
+.card {
     width: 288px;
     height: 503px;
     background-color: #FFFFFF;
@@ -84,25 +84,28 @@ body{
     letter-spacing: 1px;
 }
 
-.icon-true, .icon-false{
+.icon-true, .icon-false {
     width: 20px;
     height: 20px;
     margin-right: 23px;
 }
 
-hr{
+hr {
     margin-top: 25px;
 }
-.free-title{
+
+.free-title {
     letter-spacing: 2px;
 }
-.forever-title{
+
+.forever-title {
     font-family: "Allan", serif;
     color: rgba(45, 68, 128, 1);
     font-size: 36px;
     transform: translateX(30px);
 }
-button{
+
+button {
     font-size: 16px;
     letter-spacing: 1px;
     font-weight: 600;
