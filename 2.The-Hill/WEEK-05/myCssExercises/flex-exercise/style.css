@@ -1,0 +1,119 @@
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 900*/
+
+.noto-sans-symbols-<noto-sans-symbol> {
+  font-family: "Noto Sans Symbols", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <400>;
+  font-style: normal;
+}
+
+.allan-regular {
+    font-family: "Allan", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.allan-bold {
+    font-family: "Allan", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*
+    1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+body{
+    font-family: "Noto Sans Symbols", sans-serif;
+    background-color: #2D4480;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    width: 288px;
+    height: 503px;
+    background-color: #FFFFFF;
+    margin: auto;
+    text-align: center;
+    border-radius: 27px;
+    box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.6);
+    padding: 35px 50px;
+    position: relative;
+}
+
+.basic-title{
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-weight: 300;
+    margin-bottom: 28px;
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-features{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-features > p {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.icon-true, .icon-false{
+    width: 20px;
+    height: 20px;
+    margin-right: 23px;
+}
+
+hr{
+    margin-top: 25px;
+}
+.free-title{
+    letter-spacing: 2px;
+}
+.forever-title{
+    font-family: "Allan", serif;
+    color: rgba(45, 68, 128, 1);
+    font-size: 36px;
+    transform: translateX(30px);
+}
+button{
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background-color: #FFBC0F;
+    text-transform: uppercase;
+    border: none;
+    color: rgba(37, 56, 104, 1);
+    width: 180px;
+    height: 75px;
+    border-radius: 35px;
+    position: absolute;
+    bottom: -35px;
+    left: 60px;
+}
