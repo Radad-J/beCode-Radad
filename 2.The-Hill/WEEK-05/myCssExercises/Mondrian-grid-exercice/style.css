@@ -1,0 +1,78 @@
+/*
+    1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+body{
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    height: 748px;
+    width: 748px;
+    display: grid;
+    gap: 9px;
+    grid-template-rows: 414px 130px 155px 20px;
+    grid-template-columns: 320px 198px 153px 50px;
+}
+
+.grid-item:nth-child(1){
+    grid-area: 1 / 1 / 1 / 2;
+    background-color: red;
+}
+
+.grid-item:nth-child(2){
+    background-color: #F0F1EC;
+    grid-area: 1 / 2 / 2 / 5;
+}
+
+.grid-item:nth-child(3){
+    background-color: #F0F1EC;
+    grid-area: 2 / 1 / 4 / 2;
+}
+
+.grid-item:nth-child(4){
+    background-color: #F0F1EC;
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.grid-item:nth-child(5){
+    background-color: #F0F1EC;
+    grid-area: 2 / 2 / 4 / 4;
+}
+
+.grid-item:nth-child(6){
+    background-color: #F8D11F;
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+.grid-item:nth-child(7){
+    background-color: #242629;
+    grid-area: 4 / 3 / 5 / 4;
+}
+
+.grid-item:nth-child(8){
+    background-color: #004592;
+    grid-area: 2 / 4 / 3 / 5;
+    border-bottom: 10px solid #212121;
+}
+
+.grid-item:nth-child(9){
+    background-color: #F0F1EC;
+    grid-area: 3 / 4 / 5 / 6;
+}
