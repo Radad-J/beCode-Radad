@@ -1,0 +1,55 @@
+/* Default styles for laptops and above */
+
+h2 {
+    display: none; /* Hide all h2s by default */
+}
+
+/* Laptop and Desktop */
+@media only screen and (min-width: 1920px) {
+    body {
+        background-color: cornflowerblue; /* Background color for desktop */
+    }
+    h2.e {
+        display: block; /* Show only this h2 for desktop */
+    }
+}
+
+/* Laptop 13 inches */
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+    body {
+        background-color: cadetblue; /* Background color for laptop 13 inches */
+    }
+    h2.d {
+        display: block; /* Show only this h2 for laptop 13 inches */
+    }
+}
+
+/* Laptop */
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+    body {
+        background-color: chocolate; /* Background color for laptop */
+    }
+    h2.c {
+        display: block; /* Show only this h2 for laptop */
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+    body {
+        background-color: pink; /* Background color for tablet */
+    }
+    h2.b {
+        display: block; /* Show only this h2 for tablet */
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    body {
+        background-color: gold; /* Background color for mobile */
+    }
+    h2.a {
+        display: block; /* Show only this h2 for mobile */
+    }
+}
