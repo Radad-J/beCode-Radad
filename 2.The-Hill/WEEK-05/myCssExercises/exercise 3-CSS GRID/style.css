@@ -77,6 +77,8 @@ body{
     padding: 10px;
     letter-spacing: 1px;
     font-size: 14px;
+    color: white;
+    text-decoration: none;
 }
 
 .list-menu{
