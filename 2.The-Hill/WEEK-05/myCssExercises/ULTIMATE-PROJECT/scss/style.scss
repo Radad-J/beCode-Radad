@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300&family=Barlow:wght@300;400;500&display=swap');
+
+//Variables
+$primary-color: rgba(255, 255, 255, 1);
+$secondary-color: #E6616C;
+$third-color: rgba(239, 239, 239, 0.5);
+$fourth-color: rgba(99, 87, 246, 1);
+
+$primary-font: "Barlow", sans-serif;
+$secondary-font: "Barlow Condensed", sans-serif;
+
+//Fonts mixins
+%barlow-light {
+    font-family: "Barlow", sans-serif;
+    font-weight: 300;
+}
+
+%barlow-regular {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+}
+
+%barlow-medium {
+    font-family: "Barlow", sans-serif;
+    font-weight: 500;
+}
+
+%barlow-condensed-light {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 300;
+}
+
+%barlow-condensed-extralight {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+%container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+//mixins
+@mixin font-theme($color: $primary-color, $size: 14px, $ltr-spacing: 0px) {
+    color: $color;
+    font-size: $size;
+    letter-spacing: $ltr-spacing;
+}
+
+@mixin button-theme($background: $secondary-color, $color: $primary-color) {
+    background-color: $background;
+    color: $color;
+    border-radius: 75px;
+    border: none;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @extend %barlow-regular;
+}
+
+//Resetting
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+* {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-color;
+}
+
+img {
+    width: 100%;
+}
+
+//SCSS
+body {
+    @extend %barlow-regular;
+    background-image: url(../images/deco1.png), linear-gradient(to right, rgba(32, 31, 34, 1), rgba(44, 45, 101, 1));
+    background-repeat: no-repeat;
+    background-position: right -50px top -112px, right;
+    color: $primary-color;
+}
+
+.container-global {
+    @extend %container;
+}
+
+//Navbar
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+
+    .logo {
+        width: 130px;
+    }
+
+    li {
+        display: inline-block;
+        margin-left: 30px;
+
+        :hover {
+            color: $secondary-color;
+            transition: 0.3s;
+        }
+    }
+}
+
+//First section
+section:nth-child(1) {
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+    padding: 50px 0px;
+
+    .part-one {
+        max-width: 500px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+
+        ::before {
+            content: '';
+            background-image: url("../images/deco3.png");
+            height: 153px;
+            width: 142px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: -45px;
+            left: -25px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        ::after {
+            content: '';
+            background: url("../images/deco2.png");
+            height: 181px;
+            width: 184px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            bottom: -50px;
+            right: 50px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        h1 {
+            @extend %barlow-light;
+            @include font-theme($primary-color, 64px, 1px);
+            text-transform: uppercase;
+        }
+
+        h2 {
+            @extend %barlow-regular;
+            @include font-theme(rgba(232, 171, 54, 1), 32px, 1px);
+            text-transform: uppercase;
+        }
+
+        p {
+            @extend %barlow-light;
+            @include font-theme($third-color, 16px, 1px);
+            line-height: 32px;
+            max-width: 90%;
+        }
+
+        .btn-1 {
+            @include button-theme;
+            margin-right: 25px;
+
+            &.btn-1:hover {
+                @include button-theme($primary-color, $secondary-color);
+                transition: 0.3s;
+            }
+        }
+
+
+        .btn-2 {
+            @include button-theme($primary-color, black);
+
+            &.btn-2:hover {
+                @include button-theme;
+                transition: 0.3s;
+            }
+        }
+    }
+}
+
+//Second section
+.part-two {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+    padding: 50px 0px;
+    gap: 10%;
+
+    img {
+        object-fit: contain;
+    }
+
+    .get-started-section {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        gap: 30px;
+        position: relative;
+        max-width: 80%;
+        padding-top: 50px;
+    }
+
+    ::after {
+        content: '';
+        position: absolute;
+        width: 210px;
+        height: 210px;
+        top: 70px;
+        right: 0px;
+        background: url("../images/Ellipse1.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0.2;
+        z-index: -1;
+    }
+
+    span {
+        @include font-theme($third-color, 16px, 1px);
+        text-transform: uppercase;
+    }
+
+
+    h1 {
+        @extend %barlow-condensed-light;
+        @include font-theme($primary-color, 56px);
+        max-width: 80%;
+    }
+
+    h2 {
+        @extend %barlow-light;
+        @include font-theme($primary-color, 20px)
+    }
+
+    p {
+        @include font-theme($third-color, 16px);
+    }
+
+    button {
+        @include button-theme;
+        width: fit-content;
+
+        &:hover {
+            @include button-theme($primary-color, $secondary-color);
+            transition: 0.3s;
+        }
+    }
+}
+
+//Third section
+section:nth-child(3) {
+    min-height: 730px;
+    display: grid;
+    justify-items: center;
+    padding: 70px 0px;
+
+    .intro {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 45%;
+        height: fit-content;
+        padding-bottom: 60px;
+        position: relative;
+
+        ::before {
+            content: '';
+            background-image: url("../images/deco3.png");
+            height: 153px;
+            width: 142px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        span {
+            @include font-theme($third-color, 16px, 1px);
+            text-transform: uppercase;
+        }
+
+        h1 {
+            @extend %barlow-condensed-light;
+            @include font-theme($primary-color, 56px);
+            margin: 40px 0px;
+        }
+
+        p {
+            @include font-theme($third-color, 16px);
+            line-height: 2;
+        }
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+
+        .info-grid-item {
+            min-height: 430px;
+            box-shadow: 0px 24px 48px 0px rgba(0, 1, 44, 0.1572);
+            border-radius: 15px;
+            max-width: 370px;
+            background: linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%);
+            border: 1px solid rgba(255, 255, 255, 0.0782);
+
+            &:hover {
+                transform: scale(1.1);
+                transition: 0.5s;
+            }
+
+            img {
+                height: 240px;
+                width: 370px;
+            }
+
+            .info-text {
+                padding: 40px 30px;
+
+                h3 {
+                    @include font-theme($primary-color, 24px);
+                    @extend %barlow-condensed-extralight;
+                    margin-bottom: 40px;
+                }
+
+                p {
+                    @include font-theme($third-color, 16px);
+                    @extend %barlow-regular;
+                }
+            }
+        }
+    }
+}
+
+//Footer
+footer {
+    max-width: 1000px;
+    min-height: 350px;
+    margin: 50px auto;
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        .footer-links-item ul {
+            padding: 0px;
+        }
+
+        .footer-links-item h3 {
+            @extend %barlow-regular;
+            @include font-theme($third-color, 16px);
+            padding-bottom: 20px;
+        }
+
+        .footer-links-item ul li {
+            @extend %barlow-regular;
+            @include font-theme($primary-color, 16px);
+            padding-bottom: 20px;
+
+            & a:hover {
+                color: $secondary-color;
+                transition: 0.3s;
+            }
+        }
+
+        .footer-links-item:nth-child(1) img {
+            width: 121px;
+            height: 24.4px;
+        }
+
+        .footer-links-item:nth-child(4) {
+            display: flex;
+            justify-content: flex-end;
+
+            a {
+                height: fit-content;
+            }
+
+            span {
+                width: 48px;
+                height: 48px;
+                border: none;
+                border-radius: 50%;
+                background-color: rgba(99, 87, 246, 1);
+                margin-left: 0.5rem;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+
+                .fb {
+                    width: 9.33px;
+                }
+
+                .twitter {
+                    width: 16px;
+                }
+
+                .insta {
+                    width: 16px;
+                }
+            }
+        }
+    }
+
+    hr {
+        background-color: $third-color;
+        height: 1px;
+        border: 0;
+    }
+
+    .copyrights {
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+            color: $third-color;
+        }
+
+        div a:hover {
+            color: $secondary-color;
+            transition: 0.3s;
+        }
+
+        div a:nth-child(2) {
+            padding-left: 50px;
+        }
+    }
+}
