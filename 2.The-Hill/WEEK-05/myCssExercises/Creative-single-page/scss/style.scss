@@ -78,6 +78,10 @@ body {
         height: 30px;
     }
 
+    .hamburger-icon {
+        display: none;
+    }
+
     ul li {
         display: inline;
         color: $secondary-color;
@@ -113,7 +117,7 @@ body {
         .mobile-back {
             display: none;
         }
-        
+
         div {
             max-width: 60%;
 

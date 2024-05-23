@@ -149,6 +149,12 @@
     .grid-color {
         background-image: none !important;
 
+        .hamburger-icon {
+            display: block !important;
+            height: 18px;
+            width: 24px;
+        }
+
         ul {
             display: none;
         }
@@ -275,6 +281,7 @@
 
     .sec-call {
         background-image: none !important;
+
         .container-call {
             padding: 0px 24px !important;
             gap: 0px !important;

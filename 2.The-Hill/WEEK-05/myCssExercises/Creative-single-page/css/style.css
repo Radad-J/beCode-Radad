@@ -212,6 +212,11 @@ p {
   .grid-color {
     background-image: none !important;
   }
+  .grid-color .hamburger-icon {
+    display: block !important;
+    height: 18px;
+    width: 24px;
+  }
   .grid-color ul {
     display: none;
   }
@@ -376,6 +381,9 @@ body {
 .grid-color .logo {
   width: 161px;
   height: 30px;
+}
+.grid-color .hamburger-icon {
+  display: none;
 }
 .grid-color ul li {
   display: inline;
