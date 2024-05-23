@@ -71,12 +71,20 @@ p {
   background-color: #F94F4F;
   color: #FFFFFF;
 }
+.btn-1:hover {
+  transition: 0.3s;
+  background-color: #FF9393;
+}
 
 .btn-2 {
   font-weight: 800;
   padding: 20px 35px;
   background-color: #000000;
   color: #FFFFFF;
+}
+.btn-2:hover {
+  transition: 0.3s;
+  background-color: #434356;
 }
 
 .btn-3 {
@@ -85,6 +93,11 @@ p {
   background-color: transparent;
   color: #F94F4F;
   border-bottom: #F94F4F solid 2px;
+}
+.btn-3:hover {
+  transition: 0.3s;
+  color: #FF9393;
+  border-color: #FF9393;
 }
 
 /*// <uniquifier>: Use a unique and descriptive class name
@@ -115,7 +128,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 img {
@@ -147,6 +160,10 @@ body {
   display: inline;
   color: #FFFFFF;
   margin-left: 30px;
+}
+.grid-color ul li:hover {
+  transition: 0.3s;
+  font-weight: bold;
 }
 .grid-color ul lili:nth-child(1) {
   margin-left: 50px;
@@ -195,7 +212,7 @@ body {
 .section-two .darkblue-div::before {
   content: "";
   position: absolute;
-  background-image: url("../images/deco.png");
+  background-image: url("../images/deco.svg");
   left: -66px;
   top: 230px;
   height: 61px;
@@ -280,7 +297,7 @@ body {
 }
 .section-four .left-blue .cont-text::after {
   content: "";
-  background-image: url("../images/deco2.png");
+  background-image: url("../images/deco2.svg");
   width: 134px;
   height: 60px;
   position: absolute;
@@ -293,6 +310,10 @@ body {
 .section-four .left-blue .cont-text .div-arrows img {
   height: 40px;
   width: 40px;
+}
+.section-four .left-blue .cont-text .div-arrows img:hover {
+  transition: 0.3s;
+  opacity: 0.7;
 }
 .section-four .left-blue .cont-text .div-arrows img:nth-child(1) {
   margin-right: 15px;
@@ -314,7 +335,7 @@ body {
 }
 
 .sec-call {
-  background-image: url("../images/deco.png");
+  background-image: url("../images/deco.svg");
   background-position: -5% 50%;
   background-repeat: no-repeat;
 }

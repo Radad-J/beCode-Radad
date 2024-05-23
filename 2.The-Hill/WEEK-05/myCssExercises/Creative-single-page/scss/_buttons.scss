@@ -5,6 +5,11 @@
     padding: 20px 35px;
     background-color: $third-color;
     color: $secondary-color;
+
+    &:hover {
+        transition: 0.3s;
+        background-color: $active-third;
+    }
 }
 
 %btn-2 {
@@ -12,6 +17,11 @@
     padding: 20px 35px;
     background-color: $primary-color;
     color: $secondary-color;
+
+    &:hover {
+        transition: 0.3s;
+        background-color: $active-fourth;
+    }
 }
 
 %btn-3 {
@@ -20,4 +30,10 @@
     background-color: transparent;
     color: $third-color;
     border-bottom: $third-color solid 2px;
+
+    &:hover {
+        transition: 0.3s;
+        color: $active-third;
+        border-color: $active-third;
+    }
 }
