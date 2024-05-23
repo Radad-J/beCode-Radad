@@ -108,7 +108,7 @@
 
     .sec-call {
         background-image: none !important;
-        
+
         .container-call {
             gap: 100px;
             padding: 0px 40px;
@@ -117,7 +117,7 @@
 }
 
 //Mobile
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 425px) {
 
     //Reconfigure sizes
     h1 {
@@ -153,6 +153,7 @@
             display: none;
         }
     }
+
     .section-one {
         background-image: none !important;
         min-height: 700px !important;
@@ -166,6 +167,7 @@
                 display: block !important;
                 object-fit: cover;
                 width: 100%;
+
                 img {
                     width: 100%;
                 }
@@ -173,6 +175,7 @@
 
             div:nth-child(2) {
                 padding: 60px 24px 100px 24px !important;
+
                 p {
                     padding: 0px !important;
                 }
@@ -183,6 +186,7 @@
             }
         }
     }
+
     .section-two {
         display: flex !important;
         flex-direction: column !important;
@@ -193,11 +197,13 @@
 
             #mobile-sec-two {
                 display: block !important;
+
                 img {
                     height: 200px;
                 }
             }
         }
+
         .darkblue-div {
             padding: 70px 24px !important;
             min-height: 377px !important;
@@ -214,42 +220,67 @@
 
     .section-three {
         flex-direction: column;
-        
+
         #mobile-title {
             display: block !important;
             color: $secondary-color;
         }
+
         .white-div {
             display: none !important;
         }
+
         .overflow-div {
-            padding-top: 96px 24px !important;
+            padding: 96px 24px 96px 24px !important;
             width: 100% !important;
             margin-top: 0px !important;
 
-            h1 {
-                font-size: 80px !important;
+            h2 {
+                margin-bottom: 110px;
             }
+
+            .overflow-item {
+                margin-left: 24px;
+                margin-bottom: 80px !important;
+
+                h1 {
+                    font-size: 80px !important;
+                    left: -20px !important;
+                    top: -15px !important;
+                }
+            }
+
         }
     }
 
     .section-four {
         display: flex !important;
         flex-direction: column-reverse;
+        min-height: fit-content !important;
 
         .left-blue {
             margin: auto !important;
+            padding: 0px 24px !important;
+            height: 272px !important;
 
-            .cont-text::after {
-                display: none;
+            .cont-text {
+                min-height: fit-content !important;
             }
+        }
+
+        .div-book {
+            height: 404px !important;
         }
     }
 
     .sec-call {
+        background-image: none !important;
         .container-call {
+            padding: 0px 24px !important;
             gap: 0px !important;
             flex-direction: column;
+            align-items: start !important;
+            justify-content: space-around !important;
         }
     }
 }
