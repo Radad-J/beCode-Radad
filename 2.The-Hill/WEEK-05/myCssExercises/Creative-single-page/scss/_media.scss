@@ -271,6 +271,10 @@
 
             .cont-text {
                 min-height: fit-content !important;
+
+                &::after {
+                    display: none !important;
+                }
             }
         }
 

@@ -312,6 +312,9 @@ p {
     min-height: -moz-fit-content !important;
     min-height: fit-content !important;
   }
+  .section-four .left-blue .cont-text::after {
+    display: none !important;
+  }
   .section-four .div-book {
     height: 404px !important;
   }
