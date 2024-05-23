@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
+@import "config";
+@import "buttons";
+
+/*// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.commissioner-<uniquifier> {
+    font-family: "Commissioner", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+    "slnt" 0,
+    "FLAR" 0,
+    "VOLM" 0;
+}*/
+
+//Resetting
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    font-family: "Commissioner", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+
+
+}
+
+.btn-1 {
+    @extend %btn-1;
+}
+
+.btn-2 {
+    @extend %btn-2;
+}
+
+.btn-3 {
+    @extend %btn-3;
+}
+
+.container-header {
+    @extend %container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 180px;
+
+}
+
+.grid-color {
+    background: linear-gradient(to left, $third-color 50%, $secondary-color 50%);
+
+    .logo {
+        width: 161px;
+        height: 30px;
+    }
+
+    ul li {
+        display: inline;
+        color: $secondary-color;
+        margin-left: 30px;
+
+        &li:nth-child(1) {
+            margin-left: 50px;
+        }
+    }
+}
+
+.section-one {
+    background-image: linear-gradient(to right, $secondary-color 38%, transparent), url("../images/bitmap.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100% 0%;
+    min-height: 800px;
+
+    .container-sec-two {
+        @extend %container;
+        display: flex;
+        align-items: center;
+        min-height: 580px;
+
+        div {
+            max-width: 60%;
+
+            p {
+                margin: 50px 0px 70px 0px;
+            }
+        }
+    }
+}
+
+.section-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 984px;
+
+    .coffee-div img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .darkblue-div {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding-top: 200px;
+        padding-left: 80px;
+        background-color: $fourth-color;
+        color: $secondary-color;
+        position: relative;
+        height: 100%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url("../images/deco.png");
+            left: -66px;
+            top: 230px;
+            height: 61px;
+            width: 135px;
+        }
+        .darkblue-text-div {
+            max-width: 445px;
+            height: 100%;
+
+            h2 span{
+                color: $third-color;
+            }
+    
+            p {
+                margin: 50px 0px 40px 0px;
+            }
+        }
+        
+
+    }
+}
+
+.section-three {
+    min-height: 900px;
+    display: flex;
+    position: relative;
+    
+    .white-div {
+        background-color: $secondary-color;
+        width: 37%;
+        h2 {
+            position: absolute;
+            top: 200px;
+            left: 165px;
+        }
+    }
+
+    .overflow-div {
+        background-color: $third-color;
+        width: 63%;
+        margin-top: -180px;
+        min-height: 1100px;
+        //padding: 200px 165px 200px 285px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 85px;
+
+        .overflow-div-text {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            min-height: 600px;
+            max-width: 505px;
+            .overflow-item {
+                color: $secondary-color;
+                position: relative;
+                margin-bottom: 56px;
+
+                h1 {
+                    opacity: 0.25;
+                    position: absolute;
+                    top: -45px;
+                    left: -55px;
+                }
+    
+                h3 {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
+
+.section-four {
+    display: grid;
+    grid-template-columns: 37% 63%;
+    min-height: 730px;
+
+    .left-blue {
+        height: 530px;
+        background-color: $fourth-color;
+        color: $secondary-color;
+        margin-right: -200px;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .cont-text {
+            max-width: 445px;
+            min-height: 224px;
+            position: relative;
+
+            &::after {
+                content: "";
+                background-image: url("../images/deco2.png");
+                width: 134px;
+                height: 60px;
+                position: absolute;
+                top: 0px;
+                right: -215px;
+            }
+            h2 {
+                margin-bottom: 50px;
+            }
+            .div-arrows img{
+                height: 40px;
+                width: 40px;
+
+                &:nth-child(1) {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    .div-book{
+        height: 100%;
+        background-image: linear-gradient(to top, $primary-color -10%, transparent, transparent), url("../images/background-three.png");
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: end;
+        justify-content: flex-end;
+        color: $secondary-color;
+
+        .book-text {
+            width: 350px;
+            min-height: 150px;
+        }
+    }
+}
+.sec-call {
+    background-image: url("../images/deco.png");
+    background-position: -5% 50%;
+    background-repeat: no-repeat;
+
+    .container-call {
+        @extend %container;
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            white-space: nowrap;
+        }
+    }
+}

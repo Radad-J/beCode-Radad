@@ -1,0 +1,23 @@
+@import "config";
+
+%btn-1 {
+    font-weight: 800;
+    padding: 20px 35px;
+    background-color: $third-color;
+    color: $secondary-color;
+}
+
+%btn-2 {
+    font-weight: 800;
+    padding: 20px 35px;
+    background-color: $primary-color;
+    color: $secondary-color;
+}
+
+%btn-3 {
+    font-weight: 800;
+    padding: 10px 0px;
+    background-color: transparent;
+    color: $third-color;
+    border-bottom: $third-color solid 2px;
+}
