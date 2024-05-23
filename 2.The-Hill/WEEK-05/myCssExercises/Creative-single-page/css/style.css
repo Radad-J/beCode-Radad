@@ -170,7 +170,7 @@ body {
 }
 
 .section-one {
-  background-image: linear-gradient(to right, #FFFFFF 38%, transparent), url("../images/bitmap.png");
+  background-image: linear-gradient(to right, #FFFFFF 38%, transparent), url("../images/bitmap.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 100% 0%;
