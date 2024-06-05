@@ -9,6 +9,20 @@
     margin: 0;
 }
 
-ul {
-    list-style: none;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.section {
+    padding: 20px;
+    box-sizing: border-box;
+}
+#section1 {
+    height: 200vh;
+    background-color: #f8b400;
+}
+#section2 {
+    height: 100vh;
+    background-color: #4caf50;
 }

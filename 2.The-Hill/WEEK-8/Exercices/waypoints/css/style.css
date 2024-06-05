@@ -9,21 +9,23 @@
   margin: 0;
 }
 
-ul {
-  list-style: none;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.container {
-  display: grid;
-  gap: 20px;
+.section {
   padding: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  margin: auto;
+  box-sizing: border-box;
 }
-.container img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
+
+#section1 {
+  height: 200vh;
+  background-color: #f8b400;
+}
+
+#section2 {
+  height: 100vh;
+  background-color: #4caf50;
 }
