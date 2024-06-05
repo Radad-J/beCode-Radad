@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+* {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
