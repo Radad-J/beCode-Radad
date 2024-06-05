@@ -1,0 +1,15 @@
+body section {
+  height: 100vh;
+}
+body section:nth-child(1) {
+  background-color: blue;
+}
+body section:nth-child(2) {
+  background-color: red;
+}
+body section:nth-child(3) {
+  background-color: green;
+}
+body section:nth-child(4) {
+  background-color: yellow;
+}
