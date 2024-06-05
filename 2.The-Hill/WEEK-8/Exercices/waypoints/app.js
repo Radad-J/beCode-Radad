@@ -6,7 +6,7 @@ new Waypoint({
             alert('Are you sure? Things are wild down there.');
         }
     },
-    offset: '0%' // Trigger when top of section 2 reaches the top of the viewport
+    offset: '100%' // Trigger when top of section 2 reaches the top of the viewport
 });
 
 // Waypoint to detect scrolling up from Section 2 to Section 1
@@ -17,5 +17,5 @@ new Waypoint({
             alert('I told you!');
         }
     },
-    offset: '100%' // Trigger when bottom of section 2 reaches the bottom of the viewport
+    offset: '0%' // Trigger when bottom of section 2 reaches the bottom of the viewport
 });
