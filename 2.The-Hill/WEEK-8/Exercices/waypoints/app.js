@@ -17,5 +17,5 @@ new Waypoint({
             alert('I told you!');
         }
     },
-    offset: '0%' // Trigger when bottom of section 2 reaches the bottom of the viewport
+    offset: '100%' // Trigger when bottom of section 2 reaches the bottom of the viewport
 });
