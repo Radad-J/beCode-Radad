@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow promise</title>
+  <style>
+    body {
+      transition: background-color 1s ease;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  // Function that returns a promise to change background color after a delay
+  function generateBG(color, delay) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        document.body.style.backgroundColor = color;
+        resolve();
+      }, delay);
+    });
+  }
+
+  // Async function to change background colors sequentially
+  async function changeColors() {
+    await generateBG('blue', 1000);
+    await generateBG('yellow', 1000);
+    await generateBG('red', 1000);
+    await generateBG('cyan', 1000);
+    await generateBG('violet', 1000);
+    await generateBG('green', 1000);
+    await generateBG('purple', 1000);
+  }
+
+  // Call the async function to start changing colors
+  changeColors();
+</script>
+
+</body>
+</html>
