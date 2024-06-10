@@ -16,18 +16,19 @@
             document.querySelector("body").style.backgroundColor = color;
             setTimeout(callback, 1000);
         }
-
-        resetBackground("yellow", ()=> {
-            resetBackground("red", ()=> {
-                resetBackground("cyan", ()=> {
-                    resetBackground("violet", ()=> {
-                        resetBackground("green", ()=> {
-                            resetBackground("purple", ()=> {
-                            });
-                        });
-                    });
-                });
-            });
+        resetBackground("blue", ()=> {
+          resetBackground("yellow", ()=> {
+              resetBackground("red", ()=> {
+                  resetBackground("cyan", ()=> {
+                      resetBackground("violet", ()=> {
+                          resetBackground("green", ()=> {
+                              resetBackground("purple", ()=> {
+                              });
+                          });
+                      });
+                  });
+              });
+          });
         });
     </script>
   </body>

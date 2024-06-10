@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow</title>
+  <style>
+    body {
+      transition: background-color 1s ease;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function changeBackgroundColor(color) {
+    return new Promise((resolve) => {
+      document.body.style.backgroundColor = color;
+      setTimeout(resolve, 1000);
+    });
+  }
+
+  changeBackgroundColor('blue')
+    .then(() => changeBackgroundColor('yellow'))
+    .then(() => changeBackgroundColor('red'))
+    .then(() => changeBackgroundColor('cyan'))
+    .then(() => changeBackgroundColor('violet'))
+    .then(() => changeBackgroundColor('green'))
+    .then(() => changeBackgroundColor('purple'))
+    .catch((error) => console.error('An error occurred:', error));
+</script>
+
+</body>
+</html>
