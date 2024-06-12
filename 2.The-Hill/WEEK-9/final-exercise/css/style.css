@@ -111,6 +111,7 @@ body {
   min-height: 700px;
   position: relative;
   margin: 30px auto;
+  white-space: pre-wrap;
 }
 .overlay .meal h2 {
   margin: 20px 0px;
