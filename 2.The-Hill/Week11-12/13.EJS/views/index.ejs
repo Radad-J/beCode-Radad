@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <%- include("./partials/head.ejs") %>
+</head>
+<body>
+    <%
+    const date = new Date();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    %>
+
+    <h1>Hello !</h1>
+    <h2>It's <%= hours + "h" + minutes %></h2>
+
+    <!-- Here below we declare an array with some string -->
+    <% const myArr = ["Post one", "Post Two", "Post three"] %>
+    <!-- Here below we open a foreach and then close the javascript part so we can write some html afterwards -->
+    <% myArr.forEach(post => { %>
+    <!-- Here below is the html inside de loop. Inside of the h1 we render the content of the element of the array in the loop -->
+    <h1><%= post %></h1>
+    <!-- Here below we close the foreach -->
+    <% }) %>
+
+
+    <% if (posts.length) { %>
+        <% posts.forEach(post => { %>
+        <h3><%= post.title %></h3>
+        <p><%= post.description %></p>
+        <small> <%= post.author %> </small>
+        <%})%>
+    <% } else { %>
+        <h3> No posts found </h3>
+    <% } %>
+</body>
+</html>
