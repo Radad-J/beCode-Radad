@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!text) return;
 
         try {
-            const response = await fetch('https://todo-api-peach-seven.vercel.app/api/todo', {
+            const response = await fetch('https://todo-api-peach-seven.vercel.app/api/todos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
