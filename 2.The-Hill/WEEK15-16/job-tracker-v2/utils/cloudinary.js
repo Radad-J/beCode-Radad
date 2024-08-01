@@ -50,6 +50,7 @@ const uploadFields = upload.fields([
 ]);
 
 module.exports = {
+  uploadToCloudinary,
   uploadFields,
   uploadCv,
   uploadProfilePicture,

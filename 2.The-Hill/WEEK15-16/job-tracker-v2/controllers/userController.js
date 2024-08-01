@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const { errorHandler } = require("../middleware/errorHandler");
-const { uploadProfilePicture, uploadCv } = require("../utils/cloudinary");
+const { uploadToCloudinary } = require("../utils/cloudinary");
 
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -10,18 +10,10 @@ const generateToken = (id) => {
 };
 
 const registerUser = async (req, res) => {
-  const {
-    firstname,
-    lastname,
-    email,
-    github,
-    password,
-    cv,
-    profilePicture,
-    confirmPassword,
-  } = req.body;
-
   let validationErrors = [];
+
+  const { firstname, lastname, email, github, password, confirmPassword } =
+    req.body;
 
   if (password !== confirmPassword) {
     validationErrors.push({
@@ -42,17 +34,22 @@ const registerUser = async (req, res) => {
         errors: [{ path: "email", message: "User already exists" }],
       });
     }
-
     let cvUrl = "";
     let profilePictureUrl = "";
 
     if (req.files["cv"]) {
-      const resultCV = await uploadCv(req.files["cv"][0]["buffer"]);
+      const resultCV = await uploadToCloudinary(
+        "auto",
+        "jobApplyTracker/cv",
+        req.files["cv"][0]["buffer"]
+      );
       cvUrl = resultCV.secure_url;
     }
 
     if (req.files["profilePicture"]) {
-      const resultProfilePicture = await uploadProfilePicture(
+      const resultProfilePicture = await uploadToCloudinary(
+        "auto",
+        "jobApplyTracker/profilePicture",
         req.files["profilePicture"][0]["buffer"]
       );
       profilePictureUrl = resultProfilePicture.secure_url;
@@ -77,7 +74,6 @@ const registerUser = async (req, res) => {
         github: user.github,
         cv: user.cv,
         profilePicture: user.profilePicture,
-        token: generateToken(user._id),
       });
     } else {
       res.status(400).json({
@@ -89,7 +85,6 @@ const registerUser = async (req, res) => {
     res.status(400).json({ errors });
   }
 };
-
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
