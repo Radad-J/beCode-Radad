@@ -25,7 +25,7 @@ const uploadToCloudinary = (resourceType, folderPath, buffer) => {
     });
   };
 
-const uploadCv = async (buffer) => {
+/*const uploadCv = async (buffer) => {
   return await uploadToCloudinary(
     "application/pdf",
     "jobApplyTracker/cv",
@@ -39,7 +39,7 @@ const uploadProfilePicture = async (buffer) => {
     "jobApplyTracker/profilePicture",
     buffer
   );
-};
+};*/
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
@@ -52,6 +52,4 @@ const uploadFields = upload.fields([
 module.exports = {
   uploadToCloudinary,
   uploadFields,
-  uploadCv,
-  uploadProfilePicture,
 };

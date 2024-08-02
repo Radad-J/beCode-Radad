@@ -2,6 +2,7 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const { errorHandler } = require("../middleware/errorHandler");
 const { uploadToCloudinary } = require("../utils/cloudinary");
+const cloudinary = require("cloudinary").v2;
 
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -175,12 +176,53 @@ const updateProfile = async (req, res) => {
       lastname: updatedUser.lastname,
       email: updatedUser.email,
       github: updatedUser.github,
-      token: generateToken(updatedUser._id),
     });
   } else {
     res
       .status(404)
       .json({ errors: [{ path: "general", message: "User not found" }] });
+  }
+};
+
+const updateCv = async (req, res) => {
+  const user = await User.findById(req.user._id);
+  const url = user.cv;
+  try{
+    console.log(req.files);
+  } catch(err) {
+    console.log(err);
+  }
+  //fetch the current link to find the id
+  //delete it from cloudinary
+  try {
+    if (url) {
+      const publicID = url.split("/").slice(-3).join("/").split(".")[0];
+      const result = await cloudinary.uploader.destroy(publicID);
+      console.log("Delete result:", result);
+    }
+
+    if (req.files["cv"]) {
+      const resultCV = await uploadToCloudinary(
+        "auto",
+        "jobApplyTracker/cv",
+        req.files["cv"][0]["buffer"]
+      );
+
+      user.cv = resultCV.secure_url;
+      const updatedUserCv = await User.updateOne({_id: req.user._id}, {$set: {cv: user.cv}});
+      res.status(200).json(updatedUserCv);
+    }
+
+  } catch (err) {
+    console.log(err);
+    if (err.message.includes("Missing required parameter")) {
+      err = {
+        cloudinaryError: {
+          URLerror: "No file hosted here",
+        },
+      };
+    }
+    throw err;
   }
 };
 
@@ -207,5 +249,6 @@ module.exports = {
   logoutUser,
   getProfile,
   updateProfile,
+  updateCv,
   changePassword,
 };
